@@ -348,35 +348,36 @@
     var playerInstance = jwplayer("player");
 
     playerInstance.setup({
-        playlist: [{
-            "sources": [
-                {
-                    "default": false,
-                    "type": "dash",
-                    "file": atob(get),
-                    "drm": {
-                        "clearkey": { "keyId": atob(key), "key": atob(key2) }
-                    },
-                    "label": "0"
-                }
-            ]
-        }],
-        logo: {
+    playlist: [{
+        "sources": [
+            {
+                "default": false,
+                "type": "dash",
+                "file": atob(get),
+                "drm": {
+                    "clearkey": { "keyId": atob(key), "key": atob(key2) }
+                },
+                "label": "0"
+            }
+        ]
+    }],
+    logo: {
         file: "https://i.postimg.cc/fbRYpf1j/Red-Business-You-Tube-Thumbnail-1.png", // URL of your logo image
         link: "https://watchasports.online", // URL the logo should link to
         hide: false, // Set to true if you want to hide the logo on the player
         position: "top-right", // Set the position of the logo
         margin: "10" // Adjust margin as needed
     },
-        width: "100%",
-        aspectratio: "16:9",
-        autostart: aut,
-        height:"100vh",
-        cast: {},
-        sharing: {},
-        image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmul0Oa2-x5EL7G3qO92cS_cCYBbkUPBAsVt6YdWR_51O4AIZhpfGFZvVOftlw2k9h_BoTx3sCr2IcgmX4fOP6wofDYGwxzAf-clE5F1Hj9_ps1sM5Yx9JNB3SyZRXbBmi53uCQ9vcyxz3Cg4FPUzT6V3-bQb22FIMLIl599jbxJbG491kT2CEGnlAENJs/s1280/Black%20Minimalist%20Gaming%20Live%20Stream%20YouTube%20Thumbnail.png"
-    });
-    </script>
+    width: "100%",
+    aspectratio: "16:9",
+    autostart: aut,
+    height:"100vh",
+    cast: {},
+    sharing: {},
+    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmul0Oa2-x5EL7G3qO92cS_cCYBbkUPBAsVt6YdWR_51O4AIZhpfGFZvVOftlw2k9h_BoTx3sCr2IcgmX4fOP6wofDYGwxzAf-clE5F1Hj9_ps1sM5Yx9JNB3SyZRXbBmi53uCQ9vcyxz3Cg4FPUzT6V3-bQb22FIMLIl599jbxJbG491kT2CEGnlAENJs/s1280/Black%20Minimalist%20Gaming%20Live%20Stream%20YouTube%20Thumbnail.png"
+});
+</script>
+
 
 
 </head>
