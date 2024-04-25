@@ -1,7 +1,9 @@
-
-
-<marquee behavior="scroll" direction="left"><b> 🛑ALERT🛑 WAIT 20 SEC TO LOAD LIVE PROPERLY🛑 : Join Our WhatsApp For Daily Live Link<a href="https://chat.whatsapp.com/BaNnmK6VM4UEsHtbfowtjJ"> @WatchaSports</a></b></marquee>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Streaming</title>
   <style>
     /* Add your additional styles here */
     .device-button {
@@ -20,47 +22,48 @@
       color: white;
     }
   </style>
-<span style="color:white; font-weight:bold;">Click 👇🏻 to change Language</span>
+</head>
+<body>
+  <marquee behavior="scroll" direction="left"><b> 🛑ALERT🛑 WAIT 20 SEC TO LOAD LIVE PROPERLY🛑 : Join Our WhatsApp For Daily Live Link <a href="https://chat.whatsapp.com/BaNnmK6VM4UEsHtbfowtjJ">@WatchaSports</a></b></marquee>
+
+  <span style="color:white; font-weight:bold;">Click 👇🏻 to change Language</span>
 
   <div id="device-list">
-     <span class="device-button" data-src="https://amalpro.github.io/watchasports/test1.html?watchasports=https://prod-ent-live-gm.jiocinema.com/hls/live/2099118/hd_akamai_merged_avc_mal_isl136/master.m3u8">Malayalam</span>
+    <span class="device-button" data-src="https://amalpro.github.io/watchasports/test1.html?watchasports=https://prod-ent-live-gm.jiocinema.com/hls/live/2099118/hd_akamai_merged_avc_mal_isl136/master.m3u8">Malayalam</span>
     <span class="device-button" data-src="https://amalpro.github.io/watchasports/block.html?url=https://forgepattern.net/embed/420jwq">WorldWide</span>
-    
-    
-    
-    
- </div>
+  </div>
 
+  <div id="iframe-container"></div>
 
-
-
- <script>
-document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
-  // Simulate click on the first device option (Android) when the page loads
-  const firstDeviceOption = document.querySelector(&quot;.device-button:first-child&quot;);
-  firstDeviceOption.click();
-});
-
-const deviceList = document.getElementById(&quot;device-list&quot;);
-const iframeContainer = document.getElementById(&quot;iframe-container&quot;);
-let currentIframe = null;
-
-deviceList.addEventListener(&quot;click&quot;, (event) =&gt; {
-  if (event.target.classList.contains(&quot;device-button&quot;)) {
-    // Remove &#39;selected&#39; class from all buttons
-    document.querySelectorAll(&quot;.device-button&quot;).forEach(button =&gt; {
-      button.classList.remove(&quot;selected&quot;);
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Simulate click on the first device option (Malayalam) when the page loads
+      const firstDeviceOption = document.querySelector(".device-button:first-child");
+      firstDeviceOption.click();
     });
 
-    // Add &#39;selected&#39; class to the clicked button
-    event.target.classList.add(&quot;selected&quot;);
+    const deviceList = document.getElementById("device-list");
+    const iframeContainer = document.getElementById("iframe-container");
+    let currentIframe = null;
 
-    const src = event.target.getAttribute(&quot;data-src&quot;);
-    iframeContainer.innerHTML = `<iframe allow='encrypted-media' allowfullscreen='' class='cf' frameborder='0' height='410px' rel='nofollow' scrolling='no' src='${src}' width='100%'/>`;
-    if (currentIframe !== null) {
-      currentIframe.remove();
-    }
-    currentIframe = iframeContainer.firstChild;
-  }
-});
-</script>    
+    deviceList.addEventListener("click", (event) => {
+      if (event.target.classList.contains("device-button")) {
+        // Remove 'selected' class from all buttons
+        document.querySelectorAll(".device-button").forEach(button => {
+          button.classList.remove("selected");
+        });
+
+        // Add 'selected' class to the clicked button
+        event.target.classList.add("selected");
+
+        const src = event.target.getAttribute("data-src");
+        iframeContainer.innerHTML = `<iframe allow="encrypted-media" allowfullscreen="" class="cf" frameborder="0" height="410px" rel="nofollow" scrolling="no" src="${src}" width="100%"></iframe>`;
+        if (currentIframe !== null) {
+          currentIframe.remove();
+        }
+        currentIframe = iframeContainer.firstChild;
+      }
+    });
+  </script>
+</body>
+</html>
