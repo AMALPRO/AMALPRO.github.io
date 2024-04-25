@@ -203,3 +203,33 @@
 </div>
 
 
+ <script>
+document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
+  // Simulate click on the first device option (Android) when the page loads
+  const firstDeviceOption = document.querySelector(&quot;.device-button:first-child&quot;);
+  firstDeviceOption.click();
+});
+
+const deviceList = document.getElementById(&quot;device-list&quot;);
+const iframeContainer = document.getElementById(&quot;iframe-container&quot;);
+let currentIframe = null;
+
+deviceList.addEventListener(&quot;click&quot;, (event) =&gt; {
+  if (event.target.classList.contains(&quot;device-button&quot;)) {
+    // Remove &#39;selected&#39; class from all buttons
+    document.querySelectorAll(&quot;.device-button&quot;).forEach(button =&gt; {
+      button.classList.remove(&quot;selected&quot;);
+    });
+
+    // Add &#39;selected&#39; class to the clicked button
+    event.target.classList.add(&quot;selected&quot;);
+
+    const src = event.target.getAttribute(&quot;data-src&quot;);
+    iframeContainer.innerHTML = `<iframe allow='encrypted-media' allowfullscreen='' class='cf' frameborder='0' height='410px' rel='nofollow' scrolling='no' src='${src}' width='100%'/>`;
+    if (currentIframe !== null) {
+      currentIframe.remove();
+    }
+    currentIframe = iframeContainer.firstChild;
+  }
+});
+</script>    
