@@ -23,12 +23,17 @@
     }
     .playe{
       margin-top: 30px;
+      padding:56.25% 0 0 0;position:relative; width: 90%;
+      box-shadow: 9px 9px 8px #8c8c8c,
+        -29px -29px 58px #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
     }
   </style>
 </head>
 <body>
   <marquee behavior="scroll" direction="left"><b> 🛑ALERT🛑 WAIT 20 SEC TO LOAD LIVE PROPERLY🛑 : Join Our WhatsApp For Daily Live Link <a href="https://chat.whatsapp.com/BaNnmK6VM4UEsHtbfowtjJ">@WatchaSports</a></b></marquee>
-
+<center>
   <span style="color:white; font-weight:bold;">Click 👇🏻 to change Language</span><br>
 
   <div id="device-list">
@@ -37,7 +42,7 @@
   </div>
 
   <div id="iframe-container"></div>
-
+</center>center>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       // Simulate click on the first device option (Malayalam) when the page loads
@@ -60,11 +65,7 @@
         event.target.classList.add("selected");
 
         const src = event.target.getAttribute("data-src");
-        iframeContainer.innerHTML = `<div class="playe" style="padding:56.25% 0 0 0;position:relative; width: 90%;
-      box-shadow: 9px 9px 8px #8c8c8c,
-        -29px -29px 58px #ffffff;
-      border-radius: 10px;
-      overflow: hidden;"><iframe allow="encrypted-media" allowfullscreen="" class="cf" frameborder="0" height="410px" rel="nofollow" scrolling="no" src="${src}" width="100%"></iframe></div>`;
+        iframeContainer.innerHTML = `<iframe allow="encrypted-media" allowfullscreen="" class="playe" frameborder="0" height="410px" rel="nofollow" scrolling="no" src="${src}" width="100%"></iframe>`;
         if (currentIframe !== null) {
           currentIframe.remove();
         }
