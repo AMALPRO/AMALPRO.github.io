@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+<script type='text/javascript'>
+        document.oncontextmenu = function(){return false}
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/console-ban@4.1.0/dist/console-ban.min.js"></script>
+    <script>
+        // default options
+        ConsoleBan.init()
+        // custom options
+        ConsoleBan.init({
+          redirect: 'https://google.com'
+        })
+ </script> 
+<style>
+body{margin:0px}
+</style>    
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="pragma" content="no-cache">
+    <title>REPRODUCTOR</title>
+</head>
+<body>
+    <div id="player"></div>
+    <script src="//ssl.p.jwpcdn.com/player/v/8.22.0/jwplayer.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo";
+        
+        var data = jwplayer("player");
+
+        var idParameter = getParameterByName('id');
+
+        data.setup({
+            playlist: [{
+                "title": "",
+                 "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmul0Oa2-x5EL7G3qO92cS_cCYBbkUPBAsVt6YdWR_51O4AIZhpfGFZvVOftlw2k9h_BoTx3sCr2IcgmX4fOP6wofDYGwxzAf-clE5F1Hj9_ps1sM5Yx9JNB3SyZRXbBmi53uCQ9vcyxz3Cg4FPUzT6V3-bQb22FIMLIl599jbxJbG491kT2CEGnlAENJs/s1280/Black%20Minimalist%20Gaming%20Live%20Stream%20YouTube%20Thumbnail.png",
+                "sources": [{
+                    "default": false,
+                    "type": "dash",
+                     "file": `https://dazn.livestreamingbolatv1.workers.dev/https://dcf-fs-live-dazn-cdn.dazn.com/dashdrm/dazn-linear-${idParameter}/stream.mpd`,
+                    "drm": {
+                        "clearkey": { "keyId": "82f8e2a17dac44c0a18f660479349c59", "key": "1b144f73e6fefe91cd05f850e2b589d0" }
+                    },
+                }]
+            }],
+            width: "100%",
+            height: "100%",
+            aspectratio: "16:9",
+            autostart: false,
+            cast: {},
+            sharing: {}
+        });
+
+        data.on("play", function (e) {
+            data.setCurrentAudioTrack(1);
+        });
+    </script>
+   
+  
+<a href="javascript:document.location.reload();" onclick="window.open('https://whatsapp.com/channel/0029VafyPeMADTOJIa3URu3u'); return false;" target="_blank">
+    <span style="border-radius: 2px; border: 2px solid #ccc; color: #cccccc; height: 20px; left: 5px; padding: 1px 0; position: absolute; text-align: center; top: 5px; width: 100px; z-index: 100;">
+        <i class="fa fa-refresh"></i> Join US
+    </span>
+</a>
+  
+  
+ 
+  
+
+</body>
+</html>
