@@ -1,0 +1,401 @@
+<!DOCTYPE html><html>
+
+
+
+<head>
+ 
+
+  
+  <title>footem</title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.6/shaka-player.ui.min.js' crossorigin='anonymous'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.6/controls.min.css" crossorigin="anonymous">
+  
+
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+</head><body bgcolor='black' style='margin:0' oncontextmenu='return false' onkeydown='return false' onmousedown='return false'>
+    <style>
+    
+.shaka-spinner-container { display: none; }
+  .video-fill video {
+        object-fit: fill cover;
+      }
+  
+   /* Overflow menu style */
+
+.shaka-overflow-menu {
+    background-color: rgb(35, 35, 35);
+    color: rgb(255, 255, 255);
+}
+
+.shaka-overflow-menu button:hover {
+    background-color: rgb(45, 45, 45);
+}
+
+.shaka-overflow-button-label {
+    color: rgb(245, 245, 245);
+}
+
+.shaka-current-selection-span {
+    color: rgb(202, 202, 202);
+}
+
+.material-icons-round {
+    color: rgb(230, 230, 230);
+}
+
+/* Overflow sub menu style */
+
+.shaka-settings-menu {
+    background-color: rgb(35, 35, 35);
+    color: rgb(255, 255, 255);
+}
+
+.shaka-settings-menu button {
+    color: rgb(255, 255, 255);
+}
+
+.shaka-settings-menu button:hover {
+    background-color: rgb(45, 45, 45);
+
+}
+
+.shaka-bottom-controls {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+
+
+#tglogo {
+position: absolute;
+right: 80px;
+top: 30px;
+height: 60px;
+width: 100px;
+} 
+</style>
+
+ <script>
+<script type="text/javascript">
+	
+$(document).ready(function() {
+	$('body').bind('cut copy paste', function (e) {
+		e.preventDefault();
+	})
+	$(".code").on("contextmenu", function(e) {
+		return false;
+	})
+})
+
+</script>
+
+
+<script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
+
+    <div class="container video-fill" data-shaka-player-container style='position:absolute;z-index: -1;top: 0;left: 0;width: 100%; height: 100%;object-fit:fill cover;'>
+      <video autoplay data-shaka-player id='video' poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUrn7Ms7PYtJaLhl1cck_7OF3G91uzvyYlDWpAi8ZMCbq-B8792XAn5_YwQ8At-iMdo2Ou9v_qzQ9aWfSqua2NvlaoWTGqd32j8H8XoIa3iBqu60MyYypBz9MPb8aX0XWMGT6mV6201gVH3Aku-yGuzKp3zBC5bE9GDBsN4Pihnp63xPYOl1CgV1N050EN/s1280/Purple%20Pixel%20Live%20Stream%20YouTube%20Thumbnail.png" style='width:100%;height:100%;'>
+
+</video>
+
+    
+
+<script>
+        (async function() {
+            // Function to get the value of a query parameter by name
+            function getQueryParameter(name) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(name);
+            }
+
+            // Define multiple manifest URIs and DRM configurations
+            const videoConfigs = [
+
+		    {
+                    id: 'USANETWORK',
+                    manifestUri: 'https://fsly.stream.peacocktv.com/Content/CMAF_OL1-CTR-4s/Live/channel(usa-east)/master.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            '78ab64fa90f137a697743b5dc27b2f96': 'de4d31c7fc6005ede28abab2a0720a9f'
+                        }
+                    }
+                },
+              {
+                    id: 'GXR-1',
+                    manifestUri: 'https://d3f8xbuyg437dn.cloudfront.net/out/v1/dfd48cfdbe04480fbb5529bebd54f04a/index.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            '1eb79728f5994eb18eadbb5b885103de': 'ad8c388edde7bbb722245ec3b019c9aa'
+                        }
+                    }
+                },
+              {
+                    id: 'GXR-2',
+                    manifestUri: 'https://live.ll.ww.aiv-cdn.net/OTTB/dub-nitro/live/clients/dash/enc/wjgklbtvhh/out/v1/659736a1e24c40e4865a80ffd75e7de7/cenc.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            '43d1c3b25207ff38b22ccfe17d302367': '7b1f85f6e81059473b114c16a25c829a'
+                        }
+                    }
+                },
+               {
+                    id: 'TNT_1_GB',
+                    manifestUri: 'https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/wf8usag51e/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            'ae26845bd33038a9c0774a0981007294': '63ac662dde310cfb4cc6f9b43b34196d'
+                        }
+                    }
+                },
+                {
+                    id: 'TNT_2_GB',
+                    manifestUri: 'https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/f0qvkrra8j/out/v1/f8fa17f087564f51aa4d5c700be43ec4/cenc.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            '6d1708b185c6c4d7b37600520c7cc93c': '1aace05f58d8edef9697fd52cb09f441'
+                        }
+                    }
+                },
+                {
+                    id: 'TNT_3_GB',
+                    manifestUri: 'https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/lsdasbvglv/out/v1/bb548a3626cd4708afbb94a58d71dce9/cenc.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            '4e993aa8c1f295f8b94e8e9e6f6d0bfe': '86a1ed6e96caab8eb1009fe530d2cf4f'
+                        }
+                    }
+                },
+                {
+                    id: 'TNT_4_GB',
+                    manifestUri: 'https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/i2pcjr4pe5/out/v1/912e9db56d75403b8a9ac0a719110f36/cenc.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            'e31a5a81caff5d07ea2411a571fc2e59': '96c5ef69479732ae734f962748c19729'
+                        }
+                    }
+                },
+                {
+                    id: 'TNT_5_GB',
+                    manifestUri: 'https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/gesdwrdncn/out/v1/79e752f1eccd4e18b6a8904a0bc01f2d/cenc.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            '60c0d9b41475e01db4ffb91ed557fbcc': '36ee40e58948ca15e3caba8d47b8f34b'
+                        }
+                    }
+                },
+              {
+                    id: 'DAZN-LALIGA',
+                    manifestUri: 'https://live.ll.ww.aiv-cdn.net/OTTB/dub-nitro/live/clients/dash/enc/wjgklbtvhh/out/v1/659736a1e24c40e4865a80ffd75e7de7/cenc.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            '43d1c3b25207ff38b22ccfe17d302367': '7b1f85f6e81059473b114c16a25c829a'
+                        }
+                    }
+                },
+              {
+                    id: 'DAZN1',
+                    manifestUri: 'https://ottb.live.cf.ww.aiv-cdn.net/dub-nitro/live/clients/dash/enc/bmnelo5c7a/out/v1/3ce2cdc4589f46189322bd3717c77957/cenc.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            '44dd9cd370b08a868ead115fe84ecfde': 'bff19ab0a51cf14e848389b152913fd0'
+                        }
+                    }
+                },
+              {
+                    id: 'DAZN2',
+                    manifestUri: 'https://ottb.live.cf.ww.aiv-cdn.net/dub-nitro/live/clients/dash/enc/xnk4m9bnxt/out/v1/4ced7b7329a54652b9bb0521ed38bd4d/cenc.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            '0eab5a3f3e3b4ba5d42d40ca30d17571': 'f3f061ded9b70e8160590d5802ecda6d'
+                        }
+                    }
+                },
+              {
+                    id: 'DAZN3',
+                    manifestUri: 'https://live.ll.ww.aiv-cdn.net/OTTB/dub-nitro/live/clients/dash/enc/zy1ee5sshp/out/v1/bdcffa69fa3b4f3bb3569c9c73ee1c01/cenc.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            'bad8efff688c0dbb3711e4a7114c22a3': '6ba800673b20776c0c850130d45e1920'
+                        }
+                    }
+                },
+              {
+                    id: 'DAZN4',
+                    manifestUri: 'https://live.ll.ww.aiv-cdn.net/OTTB/dub-nitro/live/clients/dash/enc/up7qpwch9b/out/v1/a6d5d1a1287b4893b859c2d6ccf2c65d/cenc.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            '16bf72dc22743d929c4318e193408373': 'eae51a1e3904124963074cbf432c7c8e'
+                        }
+                    }
+                }, 
+              
+               {
+                    id: 'ZIGGO',
+                    manifestUri: 'https://da-d436234620010b88000103020000000000000008.id.cdn.upcbroadband.com/wp/wp2-anp-g05060506-hzn-nl.t1.prd.dyncdn.dmdsdp.com/live/disk1/NL_000095_019371/go-dash-fhd-avc/NL_000095_019371.mpd?p=web',
+                    drmConfig: {
+                        clearKeys: {
+                            'd27104d427e4f87e75b19395a9f8796b': '723593c70e2d4c4862754398e80168f8'
+                        }
+                    }
+                }, 
+              
+              {
+                    id: 'ARENA1P',
+                    manifestUri: 'https://bpcdnmanprod.nexttv.ht.hr/bpk-tv/arena1_n/default/index.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                           '9002ec8c3dbc55c5bccdcd6871d80fd0': '7099325123bae7810db508727bb0bc7d',
+                     'c43c83acda60593d8e3607efd5010d7d': '526f4a760ef52ab85056fbc10ea27584',
+                    '712090aae2065c21951b170bc3002330':'a97774e4175b80205c3cf104e9574208'
+                        }
+                    }
+                }, 
+              
+              {
+                    id: 'ARENA2P',
+                    manifestUri: 'https://bpcdnmanprod.nexttv.ht.hr/bpk-tv/arena2/default/index.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            'c5e5ac1b3cc15fe790f1bc96535fe329': '3defe59c38079ccad25a436200ad3bd7',
+                     'b2f22f5d7ca35910a73fbabc524954de': 'd87d08fbe6505ad7099b8c258f396d15',
+                    'd256b403efcc5c3db701fc696885e102':'d46e4215e279b224e9d2a772db9c74a1'
+                        }
+                    }
+                }, 
+
+              
+               {
+                    id: 'ARENA3P',
+                    manifestUri: 'https://bpcdnmanprod.nexttv.ht.hr/bpk-tv/arena3/default/index.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            '3bedf4a896695958907e0984165090f0': 'a58317ffddf318f1540f31f67d95b5fb',
+                     '25c3df3202005cc98c47700295be59ca': '073f5a39d84dd14a9debd1a72bb1f055',
+                    'ccebefcba0a3546ba34d3fc587651708':'18f2b2027ce26867c23dcd7f57faa245'
+                        }
+                    }
+                }, 
+              
+              {
+                    id: 'ARENA4P',
+                    manifestUri: 'https://bpcdnmanprod.nexttv.ht.hr/bpk-tv/arena4/default/index.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                           '77ce6938c781526e999b688992f27764': 'bf1178841770fdba74f8629f0f06d2c0',
+                     '68cd661dbc8352fda000c532840f6340': '0255fb620f4f707ea7ba090058718306',
+                    '89d1dc54692e5b4fb5995fc0953bf5bf':'31b8953ab60b90fefc93d9bd1b806fbc'
+                        }
+                    }
+                }, 
+              
+               {
+                    id: 'ARENA5P',
+                    manifestUri: 'https://bpcdnmanprod.nexttv.ht.hr/bpk-tv/arena5/default/index.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            'e473ec5d96f45a9f9a22eb665b5b1ea9': 'ace54ce15b69d249b00395c9e6b85b90',
+                     '34a709bbeac052f293c778c0770829fd': '2b801fde1ad4839d4080d6ec6b0ec4ce',
+                    '18d3fba08f3152c38f14151219fa9792':'78b0c5b961351e482be81287466ecb08'
+                        }
+                    }
+                }, 
+
+              
+                {
+                    id: 'ARENA6P',
+                    manifestUri: 'https://bpcdnmanprod.nexttv.ht.hr/bpk-tv/arena6/default/index.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            'b3b60e79989a5b2799fa3a2394b8749f': 'a25d21e333dad3d131f126b7b57730be',
+                     'bfd8ff04a3625fcea8335c9575401697': '769d61a2d6fd7030a5088df2e70c2654',
+                    '5a86e42c58cf5d008546861c0f0fb22a':'67b1172a05bcb38a91a304d7098ce7f5'
+                        }
+                    }
+                }, 
+              
+               {
+                    id: 'ARENA9P',
+                    manifestUri: 'https://bpcdnmanprod.nexttv.ht.hr/bpk-tv/arena9/default/index.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            '91a56f5aab4c56cb88fbf787187acafe': '0000816079a5ec4f093e3274bda26f2a',
+                     'a2ff372a21b35653a88592abfec3f9a7': 'd5bc25088d1fda12849aad90716de750',
+                    '7ecfd12eb26258c381afadac16ac8fc9':'b4f351533d633abf76cda47fe75d579b'
+                        }
+                    }
+                }, 
+
+              
+               {
+                    id: 'ESPN1',
+                    manifestUri: 'https://vcdn.mn10.entel.bo/Content/DASH/Live/Channel(8757cb0a-3584-40cd-901e-8937c7deba83)/master.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            'cb004fb100bd92f23793562891e3236b': 'b3e4e74ae2080b137e68bbd0ef8a7e05'
+                        }
+                    }
+                }, 
+
+
+              
+                // Add more configurations as needed
+            ];
+
+            // Function to initialize the video player
+            async function init() {
+                const id = getQueryParameter('id');
+                const config = videoConfigs.find(cfg => cfg.id === id);
+
+                if (!config) {
+                    console.error('No valid configuration found for the provided id.');
+                    return;
+                }
+
+                const video = document.getElementById('video');
+                const ui = video['ui'];
+                ui.configure({
+                    seekBarColors: {
+                        base: 'rgba(255,255,255,.2)',
+                        buffered: 'rgba(255,255,255,.4)',
+                        played: 'rgb(255,0,0)',
+                    }
+                });
+
+                const controls = ui.getControls();
+                const player = controls.getPlayer();
+
+                // Apply DRM configuration to the player
+                player.configure({
+                    drm: config.drmConfig
+                });
+
+                try {
+                    await player.load(config.manifestUri);
+                    // Mute the video to allow autoplay
+                    video.muted = false;
+                    await video.play(); // Attempt to autoplay
+                } catch (error) {
+                    console.error('Error loading manifest or autoplay failed:', error);
+                }
+
+                // Replace jQuery with vanilla JavaScript for modifying button text
+                document.querySelectorAll('.shaka-overflow-menu-button').forEach(button => {
+                    button.textContent = 'settings';
+                });
+document.querySelectorAll('.shaka-back-to-overflow-button .material-icons-round').forEach(icon => {
+                    icon.textContent = 'arrow_back_ios_new';
+                });
+            }
+                
+
+            document.addEventListener('shaka-ui-loaded', init);
+// Display a pop-up message when the page starts
+            
+        })();
+            
+    </script>
+  <a href="https://whatsapp.com/channel/0029VafyPeMADTOJIa3URu3u" target="_blank">
+<span style="position: absolute; z-index: 100; top: 6px; left: 5px; height: 30px; width: 100px; color: rgb(204, 204, 204); border: 2px solid rgb(204, 204, 204); padding: 1px 0px; border-radius: 2px; text-align: center;">
+Join us
+</span>
+</a>
+</body></html>
