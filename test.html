@@ -22,15 +22,14 @@ $(document).ready(function() {
     <meta name='google-adsense-platform-domain' content='blogspot.com'/>
 </head>
 <body>   
-<!-- Domain and Iframe lock implementation -->
 <script type="text/javascript">
 
     var allowedDomains = [
-        'watchasportspage.blogspot.com',
+        'yourwebsite.com',
         'yourdomain.com',
-        'alloweddomain.com',
+        'watchasportspage.blogspot.com', // Specific blogspot subdomain allowed
         'localhost'
-        // Add more domains as needed
+
     ];
 
     // Check if we are in an iframe
@@ -42,10 +41,11 @@ $(document).ready(function() {
         }
     }
 
-    // Check if the parent domain is allowed
+    // Check if the parent domain is allowed (exact match including subdomains)
     function isAllowedDomain() {
         try {
             var parentDomain = document.referrer.split('/')[2];
+            // Exact match checking - will only allow specific full domains including subdomains
             return allowedDomains.indexOf(parentDomain) !== -1;
         } catch (e) {
             return false;
