@@ -22,14 +22,19 @@ $(document).ready(function() {
     <meta name='google-adsense-platform-domain' content='blogspot.com'/>
 </head>
 <body>   
+<!-- Domain and Iframe lock implementation -->
 <script type="text/javascript">
-
+    // List of allowed domains and specific subdomains that can embed this player
     var allowedDomains = [
         'yourwebsite.com',
-        'live.b4xsports.online',
-        'live.b4xsports.online', //  subdomain allowed
+        'yourdomain.com',
+        'watchasports.90live.in', // Specific blogspot subdomain allowed
+        'live.b4xsports.online',         // Specific subdomain of b4xsports.online
+        'stream.b4xsports.online',       // Another example subdomain
+        'www.b4xsports.online',         // Another example subdomain
+        'b4xsports.online',              // Main domain
         'localhost'
-
+        // Add more domains as needed
     ];
 
     // Check if we are in an iframe
@@ -63,6 +68,7 @@ $(document).ready(function() {
         throw new Error("Unauthorized domain");
     }
 </script>
+
 
 <!-- Player HTML -->
 <div id="container"></div>
