@@ -1,94 +1,277 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
     <title>Willow FHD</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.6/shaka-player.ui.min.js" crossorigin="anonymous"></script><style type="text/css">* {user-select: auto !important; -webkit-user-select: auto !important;}</style><input type="hidden" id="inject_idm_text_selection"><style></style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.6/shaka-player.ui.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.6/controls.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://livecrichdofficial.pages.dev/livecrichd2.css">  
-    <script src="https://livecrichdtv.pages.dev/sknzx.js"></script> 
+    <style>
+        * {
+            user-select: auto !important;
+            -webkit-user-select: auto !important;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+        }
+        
+        #player-container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        
+        .shaka-video-container {
+            width: 100% !important;
+            height: 100% !important;
+        }
+        
+        #video {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #message {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            z-index: 1001;
+        }
+        
+        .error-message {
+            color: #ff6b6b;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-<div id="player-container">
-    <div data-shaka-player-container="" class="shaka-video-container shaka-mobile" shaka-controls="true">
-        <video autoplay="" data-shaka-player="" id="video" poster="#" class="shaka-video" src="blob:https://criccoder264.pages.dev/16e4dd52-a3f3-420a-aae4-0cd849193b1c"></video>
-    <canvas class="shaka-canvas-container"></canvas><div class="shaka-controls-container" shown="true"><div class="shaka-scrim-container"></div><div class="shaka-play-button-container"><button type="button" class="shaka-play-button shaka-no-propagation" icon="play" aria-label="Play"></button></div><div class="shaka-hidden-fast-forward-container"><div class="shaka-fast-foward-container"><span>0s</span><span class="shaka-forward-rewind-container-icon">fast_forward</span></div></div><div class="shaka-hidden-rewind-container"><div class="shaka-rewind-container"><span>0s</span><span class="shaka-forward-rewind-container-icon">fast_rewind</span></div></div><div class="shaka-server-side-ad-container"></div><div class="shaka-bottom-controls shaka-no-propagation"><div class="shaka-ad-controls shaka-hidden"><div class="shaka-ad-position shaka-hidden"><span class="shaka-ad-position-span"></span></div><div class="shaka-ad-counter"><span class="shaka-ad-counter-span"></span></div></div><div class="shaka-controls-button-panel shaka-show-controls-on-mouse-over"><button type="button" class="shaka-current-time" aria-label="Skip ahead to live">- 0:02</button><div class="shaka-spacer" aria-hidden="true"></div><button type="button" class="shaka-mute-button material-icons-round shaka-tooltip" aria-label="Mute">volume_up</button><button type="button" class="shaka-fullscreen-button material-icons-round shaka-tooltip" aria-label="Full screen">fullscreen</button><button type="button" class="shaka-overflow-menu-button shaka-no-propagation material-icons-round shaka-tooltip" aria-label="More settings">more_vert</button></div><div class="shaka-range-container shaka-seek-bar-container" style="background: linear-gradient(to right, rgb(255, 255, 255) 98.085%, rgb(255, 255, 255) 98.085%, rgb(255, 255, 255) 99.1296%, rgba(255, 255, 255, 0.54) 99.1296%, rgba(255, 255, 255, 0.54) 98.7575%, rgba(255, 255, 255, 0.3) 98.7575%);"><div class="shaka-ad-markers"></div><input class="shaka-range-element shaka-seek-bar shaka-no-propagation shaka-show-controls-on-mouse-over" type="range" step="any" min="15359.030333280563" max="15656.030333280563" aria-label="Seek"><div id="shaka-player-ui-chapters-container"></div><div id="shaka-player-ui-thumbnail-container"><img id="shaka-player-ui-thumbnail-image" draggable="false"><div id="shaka-player-ui-thumbnail-time"></div></div></div></div><div class="shaka-overflow-menu shaka-no-propagation shaka-show-controls-on-mouse-over shaka-hidden"><button type="button" class="shaka-overflow-button shaka-caption-button shaka-tooltip-status shaka-hidden" aria-pressed="false" aria-label="Captions" shaka-status="Off"><i class="material-icons-round">closed_caption_disabled</i><label class="shaka-overflow-button-label shaka-overflow-menu-only"><span>Captions</span><span class="shaka-current-selection-span">Off</span></label></button><button type="button" class="shaka-overflow-button shaka-resolution-button shaka-tooltip-status" shaka-status="Auto" aria-label="Resolution"><i class="material-icons-round">settings</i><label class="shaka-overflow-button-label shaka-overflow-menu-only"><span>Resolution</span><span class="shaka-current-selection-span">Auto</span></label></button><button type="button" class="shaka-overflow-button shaka-language-button shaka-tooltip-status shaka-hidden" aria-label="Language" shaka-status="English"><i class="material-icons-round">language</i><label class="shaka-overflow-button-label shaka-overflow-menu-only"><span>Language</span><span class="shaka-current-selection-span">English</span></label></button><button type="button" class="shaka-pip-button shaka-tooltip shaka-hidden" aria-label="Enter Picture-in-Picture"><i class="material-icons-round">picture_in_picture_alt</i><label class="shaka-overflow-button-label shaka-overflow-menu-only"><span>Picture-in-Picture</span><span class="shaka-current-selection-span">Off</span></label></button><button type="button" class="shaka-cast-button shaka-tooltip shaka-hidden" aria-pressed="false" aria-label="Cast..."><i class="material-icons-round">cast</i><label class="shaka-overflow-button-label shaka-overflow-menu-only"><span>Cast...</span><span class="shaka-current-selection-span">Off</span></label></button><button type="button" class="shaka-overflow-button shaka-playbackrate-button shaka-tooltip-status" aria-label="Playback speed" shaka-status="1x"><i class="material-icons-round">slow_motion_video</i><label class="shaka-overflow-button-label shaka-overflow-menu-only"><span>Playback speed</span><span class="shaka-current-selection-span">1x</span></label></button></div><div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-text-languages"><button type="button" class="shaka-back-to-overflow-button" aria-label="Back"><i class="material-icons-round">arrow_back</i><span>Captions</span></button><button type="button" class="shaka-turn-captions-off-button" aria-selected="true"><span class="shaka-auto-span shaka-chosen-item">Off</span><i class="material-icons-round shaka-chosen-item" aria-hidden="true">done</i></button></div><div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-resolutions"><button type="button" class="shaka-back-to-overflow-button" aria-label="Resolution"><i class="material-icons-round">arrow_back</i><span>Resolution</span></button><button type="button" class="explicit-resolution"><span>576p</span></button><button type="button" class="explicit-resolution"><span>540p</span></button><button type="button" class="explicit-resolution"><span>396p</span></button><button type="button" class="shaka-enable-abr-button" aria-selected="true"><span class="shaka-auto-span shaka-chosen-item">Auto</span><i class="material-icons-round shaka-chosen-item" aria-hidden="true">done</i></button></div><div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-audio-languages"><button type="button" class="shaka-back-to-overflow-button" aria-label="Back"><i class="material-icons-round">arrow_back</i><span>Language</span></button><button type="button" aria-selected="true"><span class="shaka-chosen-item">English</span><i class="material-icons-round shaka-chosen-item" aria-hidden="true">done</i></button></div><div class="shaka-no-propagation shaka-show-controls-on-mouse-over shaka-settings-menu shaka-hidden shaka-playback-rates"><button type="button" class="shaka-back-to-overflow-button" aria-label="Back"><i class="material-icons-round">arrow_back</i><span>Playback speed</span></button><button type="button"><span>0.5x</span></button><button type="button"><span>0.75x</span></button><button type="button" aria-selected="true"><span class="shaka-chosen-item">1x</span><i class="material-icons-round shaka-chosen-item" aria-hidden="true">done</i></button><button type="button"><span>1.25x</span></button><button type="button"><span>1.5x</span></button><button type="button"><span>1.75x</span></button><button type="button"><span>2x</span></button></div></div><div class="shaka-client-side-ad-container shaka-hidden"></div><div class="shaka-spinner-container"><div class="shaka-spinner"><svg class="shaka-spinner-svg" viewBox="0 0 30 30"><circle class="shaka-spinner-path" cx="15" cy="15" r="14.5" fill="none" stroke-width="1" stroke-miterlimit="10"></circle></svg></div></div><div class="shaka-text-container" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: flex-end;"></div></div>
-</div>
-<script>
-const manifestUri ="https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash-sd/enc/sqxzntznhn/out/v1/23fd656f4d394fffa1f2fa0bcdb21d70/cenc-sd.mpd"
+    <div id="player-container">
+        <div data-shaka-player-container style="width:100%;height:100%;">
+            <video autoplay 
+                   data-shaka-player 
+                   id="video" 
+                   poster="" 
+                   style="width:100%;height:100%;"
+                   controls>
+            </video>
+        </div>
+    </div>
     
-async function init() {
-  const video = document.getElementById('video');
-  const ui = video['ui'];
-  const controls = ui.getControls();
-  const player = controls.getPlayer();
+    <div id="message">
+        <div class="error-message">Loading video player...</div>
+    </div>
 
-  window.player = player;
-  window.ui = ui;
-
-  player.configure({
-    drm: {
-      "clearKeys": {
-        "a374d4f24f5a101203c2d714adeac805":"1a34df7de436868747bd29fab5bc7cbc"
-      }
-    }
-  });
-
-  player.addEventListener('error', onPlayerErrorEvent);
-  controls.addEventListener('error', onUIErrorEvent);
-
-  try {
-    await player.load(manifestUri);
-    console.log('The video has now been loaded!');
-  } catch (error) {
-    onPlayerError(error);
-  }
-}
-
-function onPlayerErrorEvent(errorEvent) {
-  onPlayerError(errorEvent.detail);
-}
-
-function onPlayerError(error) {
-  console.error('Error code', error.code, 'object', error);
-}
-
-function onUIErrorEvent(errorEvent) {
-  onPlayerError(errorEvent.detail);
-}
-
-function initFailed(errorEvent) {
-  console.error('Unable to load the UI library!');
-}
-
-document.addEventListener('shaka-ui-loaded', init);
-document.addEventListener('shaka-ui-load-failed', initFailed);
-
-
-</script>
-
-        <style>
-    #message {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        z-index: 1001;
-    }
-  </style>
-
-
-
-
-  
-    
-
-
-</body></html>
+    <script>
+        const manifestUri = "https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash-sd/enc/sqxzntznhn/out/v1/23fd656f4d394fffa1f2fa0bcdb21d70/cenc-sd.mpd";
+        
+        let player = null;
+        let ui = null;
+        
+        async function init() {
+            try {
+                console.log('Initializing Shaka Player...');
+                
+                // Check if Shaka Player is supported
+                if (!shaka.Player.isBrowserSupported()) {
+                    console.error('Browser not supported!');
+                    showMessage('Browser not supported for video playback');
+                    return;
+                }
+                
+                const video = document.getElementById('video');
+                const playerContainer = document.querySelector('[data-shaka-player-container]');
+                
+                if (!video || !playerContainer) {
+                    console.error('Video element or container not found');
+                    showMessage('Video player initialization failed');
+                    return;
+                }
+                
+                // Create UI configuration
+                const config = {
+                    'controlPanelElements': ['play_pause', 'time_and_duration', 'spacer', 'mute', 'volume', 'fullscreen'],
+                    'overflowMenuButtons': ['captions', 'quality', 'language', 'picture_in_picture', 'cast', 'playback_rate'],
+                    'addSeekBar': true,
+                    'addBigPlayButton': true,
+                    'castReceiverAppId': '',
+                    'castAndroidReceiverCompatible': false
+                };
+                
+                // Initialize UI
+                ui = new shaka.ui.Overlay(video, playerContainer, video);
+                ui.configure(config);
+                
+                // Get player and controls
+                const controls = ui.getControls();
+                player = controls.getPlayer();
+                
+                // Configure player
+                player.configure({
+                    streaming: {
+                        rebufferingGoal: 10,
+                        bufferingGoal: 30,
+                        bufferBehind: 30,
+                        retryParameters: {
+                            timeout: 30000,
+                            maxAttempts: 4,
+                            baseDelay: 1000,
+                            backoffFactor: 2,
+                            fuzzFactor: 0.5
+                        }
+                    },
+                    drm: {
+                        clearKeys: {
+                            "a374d4f24f5a101203c2d714adeac805": "1a34df7de436868747bd29fab5bc7cbc"
+                        }
+                    },
+                    manifest: {
+                        retryParameters: {
+                            timeout: 30000,
+                            maxAttempts: 4,
+                            baseDelay: 1000,
+                            backoffFactor: 2,
+                            fuzzFactor: 0.5
+                        }
+                    }
+                });
+                
+                // Add event listeners
+                player.addEventListener('error', onPlayerErrorEvent);
+                player.addEventListener('loading', () => {
+                    console.log('Loading...');
+                    showMessage('Loading stream...');
+                });
+                player.addEventListener('loaded', () => {
+                    console.log('Stream loaded successfully');
+                    hideMessage();
+                });
+                player.addEventListener('buffering', (event) => {
+                    if (event.buffering) {
+                        console.log('Buffering...');
+                    }
+                });
+                
+                controls.addEventListener('error', onUIErrorEvent);
+                
+                // Load the manifest
+                console.log('Loading manifest:', manifestUri);
+                await player.load(manifestUri);
+                console.log('The video has been loaded successfully!');
+                hideMessage();
+                
+            } catch (error) {
+                console.error('Initialization failed:', error);
+                onPlayerError(error);
+            }
+        }
+        
+        function onPlayerErrorEvent(errorEvent) {
+            onPlayerError(errorEvent.detail);
+        }
+        
+        function onPlayerError(error) {
+            console.error('Player Error - Code:', error.code, 'Category:', error.category, 'Object:', error);
+            
+            let errorMessage = 'Video playback error occurred';
+            
+            switch (error.category) {
+                case shaka.util.Error.Category.NETWORK:
+                    errorMessage = 'Network error - Check your internet connection';
+                    break;
+                case shaka.util.Error.Category.TEXT:
+                    errorMessage = 'Subtitle/Caption error';
+                    break;
+                case shaka.util.Error.Category.MEDIA:
+                    errorMessage = 'Media decoding error';
+                    break;
+                case shaka.util.Error.Category.MANIFEST:
+                    errorMessage = 'Manifest parsing error';
+                    break;
+                case shaka.util.Error.Category.STREAMING:
+                    errorMessage = 'Streaming error';
+                    break;
+                case shaka.util.Error.Category.DRM:
+                    errorMessage = 'DRM/Encryption error';
+                    break;
+                case shaka.util.Error.Category.PLAYER:
+                    errorMessage = 'Player error';
+                    break;
+                case shaka.util.Error.Category.CAST:
+                    errorMessage = 'Cast error';
+                    break;
+                case shaka.util.Error.Category.STORAGE:
+                    errorMessage = 'Storage error';
+                    break;
+                case shaka.util.Error.Category.ADS:
+                    errorMessage = 'Advertisement error';
+                    break;
+            }
+            
+            showMessage(errorMessage + ' (Code: ' + error.code + ')');
+        }
+        
+        function onUIErrorEvent(errorEvent) {
+            onPlayerError(errorEvent.detail);
+        }
+        
+        function initFailed(errorEvent) {
+            console.error('Unable to load the UI library!', errorEvent);
+            showMessage('Failed to load video player library');
+        }
+        
+        function showMessage(text) {
+            const messageDiv = document.getElementById('message');
+            const errorDiv = messageDiv.querySelector('.error-message');
+            errorDiv.textContent = text;
+            messageDiv.style.display = 'flex';
+        }
+        
+        function hideMessage() {
+            const messageDiv = document.getElementById('message');
+            messageDiv.style.display = 'none';
+        }
+        
+        // Cleanup function
+        function cleanup() {
+            if (player) {
+                player.destroy();
+                player = null;
+            }
+            if (ui) {
+                ui = null;
+            }
+        }
+        
+        // Event listeners
+        document.addEventListener('shaka-ui-loaded', init);
+        document.addEventListener('shaka-ui-load-failed', initFailed);
+        window.addEventListener('beforeunload', cleanup);
+        
+        // Initialize when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                if (typeof shaka !== 'undefined') {
+                    init();
+                }
+            });
+        } else {
+            if (typeof shaka !== 'undefined') {
+                init();
+            }
+        }
+    </script>
+</body>
+</html>
