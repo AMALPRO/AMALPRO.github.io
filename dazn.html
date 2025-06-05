@@ -113,32 +113,7 @@
             border: 1px solid rgba(255,255,255,0.1) !important;
         }
 
-        /* Loading spinner improvements */
-        .shaka-spinner-container {
-            position: absolute !important;
-            top: 50% !important;
-            left: 50% !important;
-            transform: translate(-50%, -50%) !important;
-            z-index: 999 !important;
-        }
 
-        .shaka-spinner-svg {
-            width: 40px !important;
-            height: 40px !important;
-            animation: spin 1s linear infinite !important;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .shaka-spinner-path {
-            stroke: #fff !important;
-            stroke-dasharray: 90, 150 !important;
-            stroke-dashoffset: 0 !important;
-            stroke-linecap: round !important;
-        }
 
         /* Play button styling */
         .shaka-play-button-container {
@@ -245,7 +220,7 @@
     </div>
 
     <script>
-        const manifestUri = "https://a122aivottlinear-a.akamaihd.net/OTTB/fra-nitro/live/clients/dash/enc/k2dcwnlpgr/out/v1/0502dc73a24b43a79c042bf2d14f6b84/cenc.mpd";
+        const manifestUri = "https://cors-anywhere.ammoapps.com/https://cdn-ec-chi-351.linear-tve-abrn-pil.top.comcast.net/FS1HD_HD_TVE_24912_0_6246274961726988163.mpd";
         
         async function init() {
             try {
@@ -261,7 +236,7 @@
                 player.configure({
                     drm: {
                         "clearKeys": {
-                            "0c900a7eae0097e0977141b68c9bffc4": "fa534e6d48eccf905a449051a5e280c8"
+                            "d5c26cc92bdeb2f59224e435d8a42e37": "f865bb7782fcfe6dd8e9f59d7c7190a2"
                         }
                     },
                     streaming: {
