@@ -107,6 +107,7 @@ $(document).ready(function() {
 
             // Define multiple manifest URIs and DRM configurations
             const videoConfigs = [
+		    
               {
                     id: 'CBS',
                     manifestUri: 'https://ottb.live.cf.ww.aiv-cdn.net/syd-nitro/live/clients/dash/enc/91u7gpy3k8/out/v1/6b31e7ebefc7486888299eb230c5dee6/cenc.mpd',
@@ -116,6 +117,15 @@ $(document).ready(function() {
                         }
                     }
                 },
+		    {
+                    id: 'MNC',
+                    manifestUri: 'https://fta4-cdn-flr.visionplus.id/out/v1/63c0da12bb4d48afbaf053f51dff2353/index.mpd',
+                    drmConfig: {
+                        clearKeys: {
+                            '4035323a7fe64767ab8f3345ed9b93be': '67377b8d429603f8bf30c161bda269e5'
+                        }
+                    }
+                }, 
 		    {
                     id: 'SSC1',
                     manifestUri: 'https://ssc1-ak.akamaized.net/out/v1/c696e4819b55414388a1a487e8a45ca1/index.mpd',
